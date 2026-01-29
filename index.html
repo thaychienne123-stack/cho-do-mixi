@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phở Gia Truyền 36</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f6f6;
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1604908177522-432dd0b6f3b4') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header .overlay {
+      background: rgba(0,0,0,0.55);
+      padding: 40px;
+      border-radius: 10px;
+    }
+    header h1 { font-size: 48px; margin-bottom: 10px; }
+    header p { font-size: 20px; }
+    header a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #d32f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    nav {
+      background: #b71c1c;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 12px;
+      gap: 25px;
+    }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    h2 { text-align: center; color: #b71c1c; margin-bottom: 40px; }
+    .about { text-align: center; font-size: 18px; line-height: 1.6; }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .item:hover { transform: translateY(-5px); }
+    .item img { width: 100%; height: 220px; object-fit: cover; }
+    .item .content { padding: 20px; }
+    .item h3 { margin-top: 0; color: #d32f2f; }
+    .price { color: #2e7d32; font-weight: bold; font-size: 18px; }
+    .item button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #d32f2f;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    .item button:hover { background: #b71c1c; }
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .contact a {
+      display: block;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="overlay">
+    <h1>Phở Gia Truyền 36</h1>
+    <p>Tinh hoa phở Việt – Hơn 30 năm hương vị</p>
+    <a href="#menu">Xem thực đơn</a>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#gioithieu">Giới thiệu</a></li>
+    <li><a href="#menu">Thực đơn</a></li>
+    <li><a href="#datmon">Đặt món</a></li>
+    <li><a href="#lienhe">Liên hệ</a></li>
+  </ul>
+</nav>
+
+<section id="gioithieu">
+  <h2>Về chúng tôi</h2>
+  <p class="about">Phở Gia Truyền 36 phục vụ phở bò, phở gà chuẩn vị Hà Nội. Nước dùng ninh xương 12 tiếng, bánh phở tươi mỗi ngày, đảm bảo chất lượng và vệ sinh an toàn thực phẩm.</p>
+</section>
+
+<section id="menu">
+  <h2>Thực đơn</h2>
+  <div class="menu">
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1547928576-6d8e7f3b7b0b" />
+      <div class="content">
+        <h3>Phở bò tái</h3>
+        <p>Bò tươi mềm, nước dùng đậm đà.</p>
+        <p class="price">45.000đ</p>
+        <button onclick="order('Phở bò tái')">Đặt món</button>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1617196035996-1f5d8a4f6f6c" />
+      <div class="content">
+        <h3>Phở bò chín</h3>
+        <p>Thịt bò ninh mềm truyền thống.</p>
+        <p class="price">45.000đ</p>
+        <button onclick="order('Phở bò chín')">Đặt món</button>
+      </div>
+    </div>
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1627308595185-0f7e4c6e2d36" />
+      <div class="content">
+        <h3>Phở gà</h3>
+        <p>Gà ta chắc thịt, nước thanh ngọt.</p>
+        <p class="price">40.000đ</p>
+        <button onclick="order('Phở gà')">Đặt món</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="datmon">
+  <h2>Đặt món nhanh</h2>
+  <p class="about">Bấm nút đặt món hoặc gọi ngay cho chúng tôi.</p>
+  <p style="text-align:center;">
+    📞 <a href="tel:0123456789">0123 456 789</a> | 💬 <a href="https://zalo.me/0123456789" target="_blank">Zalo</a>
+  </p>
+</section>
+
+<section id="lienhe">
+  <h2>Liên hệ</h2>
+  <div class="contact">
+    <a href="https://maps.google.com" target="_blank">📍 Xem bản đồ</a>
+    <a href="mailto:phogia36@gmail.com">📧 Gửi email</a>
+    <a href="https://facebook.com" target="_blank">📘 Facebook Fanpage</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Phở Gia Truyền 36 | Thiết kế website chuyên nghiệp</p>
+</footer>
+
+<script>
+  function order(item) {
+    alert('Bạn đã chọn: ' + item + '\nVui lòng gọi 0123 456 789 để xác nhận đơn hàng.');
+  }
+</script>
+
+</body>
+</html>
